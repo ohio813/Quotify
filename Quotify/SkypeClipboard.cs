@@ -43,7 +43,7 @@ namespace Quotify
         public static void SetMessage(SkypeMessageFragment message)
         {
             var xml = message.ToXML();
-            var xmlBytes = Encoding.ASCII.GetBytes(xml);
+            var xmlBytes = Encoding.UTF8.GetBytes(xml);
             using (var xmlData = new MemoryStream(xmlBytes))
             {
                 var localeBytes = BitConverter.GetBytes(CultureInfo.CurrentCulture.LCID);
